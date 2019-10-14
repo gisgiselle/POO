@@ -1,0 +1,13 @@
+.orangeButton{
+	-fx-background-color: #FE9A2E;
+	-fx-text-fill:white;
+}
+.greyButton{
+	-fx-background-color: #E4DFDF;
+	-fx-text-fill:black;
+}
+
+.lessGreyButton{
+	-fx-background-color: #D6D0D0;
+	-fx-text-fill:black;
+}
