@@ -1,3 +1,5 @@
+package personaje.heroe.mochila.arma;
+import mochila.*
 public class Regla extends Arma{
 
 	public Regla(){

@@ -1,3 +1,5 @@
+import mochila.*;
+import personaje.*;
 public class Lentes extends ObjetoDefensa{
 	
 	public Lentes(){

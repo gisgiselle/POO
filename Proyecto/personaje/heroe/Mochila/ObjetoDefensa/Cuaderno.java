@@ -1,3 +1,5 @@
+import mochila.*;
+import personaje.*;
 public class Cuaderno extends ObjetoDefensa{
 	
 	public Cuaderno(){

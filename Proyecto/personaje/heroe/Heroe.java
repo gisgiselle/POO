@@ -1,4 +1,5 @@
-package personaje; 
+package personaje.heroe;
+import personaje.*; 
 //clase abstracta porque implementa una interface
 public abstract class Heroe extends Personaje implements Ataques{
 	private Habilidad[] habilidades;

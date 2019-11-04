@@ -1,3 +1,6 @@
+package personaje.Heroe.Mochila.ObjetoHp;
+import personaje.*;
+import mochila.*;
 public class Curita extends ObjetoHp{
 	
 	public Curita(){

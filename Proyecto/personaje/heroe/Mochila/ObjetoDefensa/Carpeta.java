@@ -1,3 +1,5 @@
+import mochila.*;
+import personaje.*;
 public class Carpeta extends ObjetoDefensa{
 	
 	public Carpeta(){

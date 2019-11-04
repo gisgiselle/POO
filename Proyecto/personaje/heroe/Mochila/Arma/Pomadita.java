@@ -1,3 +1,5 @@
+package personaje.heroe.mochila.arma;
+import mochila.*
 public class Pomadita extends ObjetoHp{
 	
 	public Pomadita(){

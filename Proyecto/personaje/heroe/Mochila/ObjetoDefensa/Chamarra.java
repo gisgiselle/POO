@@ -1,3 +1,5 @@
+import mochila.*;
+import personaje.*;
 public class Chamarra extends ObjetoDefensa{
 	
 	public Chamarra(){

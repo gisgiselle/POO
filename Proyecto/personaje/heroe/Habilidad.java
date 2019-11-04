@@ -1,4 +1,4 @@
-
+package personaje.heroe;
 public class Habilidad{
 	private String nombreHabilidad;
 	private int puntosEspeciales;
