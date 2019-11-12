@@ -10,8 +10,9 @@ import javafx.scene.control.TextArea;
 import javafx.scene.Scene;
 
 public class Main extends Application{
-	private Label resultadoSub, resultadoIva, resultadoTot;
+	private int resultadoSub, resultadoIva, resultadoTot;
 	private TextField nombreTxt, skuTxt, precioTxt, cantidadTxt;
+	private TextArea textArea;
 	public static void main(String[] args){
 		launch(args);
 	}
@@ -27,7 +28,6 @@ public class Main extends Application{
 		hb.getChildren().add(vbox2);
 
 		Scene sc= new Scene(gp);
-
 
 		vbox.getChildren().add(new Label("Nombre"));
 		nombreTxt= new TextField();
@@ -55,9 +55,10 @@ public class Main extends Application{
 		bAgregar.addEventHandler(MouseEvent.MOUSE_CLICKED, new 	AgregarHandler());
 		bCalcular.addEventHandler(MouseEvent.MOUSE_CLICKED, new CalcularHandler());
 		
-		TextArea textArea = new TextArea();
+		textArea = new TextArea();
 		textArea.setEditable(false);
 		vbox2.getChildren().add(textArea);
+
 
 		primaryStage.setScene(sc);
 		primaryStage.setTitle("Compra");
@@ -65,14 +66,27 @@ public class Main extends Application{
 
 	}
 
+
+
 	public class AgregarHandler implements EventHandler <MouseEvent>{
 		public void handle(MouseEvent e){
-
+			
+			try{
+				 textArea.setText("Nombre \n " + nombreTxt.getText()+ "\n SKU: \n"+ skuTxt.getText()+ "\n Cantidad: \n"+cantidadTxt.getText()+"\n Precio: \n"+precioTxt.getText());
+			}
+			catch(Exception t){
+				System.out.println(t.getMessage());
+				t.printStackTrace();
+			}
+		
 		}
 	}
 	public class CalcularHandler implements EventHandler <MouseEvent>{
-	public void handle(MouseEvent e){
-		
+		public void handle(MouseEvent e){
+			ResultadoSub resultado = new ResultadoSub(cantidadTxt.getText(), precioTxt.getText());
+			int resultadoSub=resultado.getResultadoSub();
+			textArea.setText("Subtotal: " +resultadoSub);
+		}
 	}
-}
+
 }
