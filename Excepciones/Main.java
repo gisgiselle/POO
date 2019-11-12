@@ -67,7 +67,6 @@ public class Main extends Application{
 	}
 
 
-
 	public class AgregarHandler implements EventHandler <MouseEvent>{
 		public void handle(MouseEvent e){
 			
@@ -85,7 +84,12 @@ public class Main extends Application{
 		public void handle(MouseEvent e){
 			ResultadoSub resultado = new ResultadoSub(cantidadTxt.getText(), precioTxt.getText());
 			int resultadoSub=resultado.getResultadoSub();
-			textArea.setText("Subtotal: " +resultadoSub);
+			ResultadoIVA resultadoI = new ResultadoIVA(cantidadTxt.getText(), precioTxt.getText());
+			double resultadoIVA=resultadoI.getResultadoIVA();
+			ResultadoTotal resultadoT = new ResultadoTotal(cantidadTxt.getText(), precioTxt.getText());
+			double resultadoTotal=resultadoT.getResultadoTotal()+resultadoI.getResultadoIVA();
+
+			textArea.setText("Subtotal: \n" +resultadoSub+ "\n" +"IVA : \n"+resultadoIVA +"\n Total: \n" +resultadoTotal);
 		}
 	}
 
