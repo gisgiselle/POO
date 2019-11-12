@@ -1,11 +1,8 @@
-//public class Producto {
-
-	//public Producto()throws NegativaException, TextVacioException,NumeroException{
-		//if(cantidadTxt.getText()<0){
-			//throw new TextVacioException();
-			//throw new NegativaException();
-			//throw new NumeroException();
-		//}
-	//}	
+public class Producto {
+	public Producto(String string) throws NegativaException{
+		if(Integer.parseInt(string)<0){
+			throw new NegativaException();		
+		}
+	}
+}	
 	
-//

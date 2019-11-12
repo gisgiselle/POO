@@ -8,6 +8,10 @@ import javafx.event.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.TextArea;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
+import javafx.scene.layout.Background;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 
 public class Main extends Application{
 	private int resultadoSub, resultadoIva, resultadoTot;
@@ -28,6 +32,7 @@ public class Main extends Application{
 		hb.getChildren().add(vbox2);
 
 		Scene sc= new Scene(gp);
+		sc.getStylesheets().add("Styles.css");
 
 		vbox.getChildren().add(new Label("Nombre"));
 		nombreTxt= new TextField();
@@ -40,6 +45,7 @@ public class Main extends Application{
 		vbox.getChildren().add(new Label("Cantidad"));
 		cantidadTxt= new TextField();
 		vbox.getChildren().add(cantidadTxt);
+		
 		
 		vbox.getChildren().add(new Label("Precio"));
 		precioTxt= new TextField();
@@ -77,20 +83,47 @@ public class Main extends Application{
 				System.out.println(t.getMessage());
 				t.printStackTrace();
 			}
-		
 		}
 	}
+
+
 	public class CalcularHandler implements EventHandler <MouseEvent>{
 		public void handle(MouseEvent e){
-			ResultadoSub resultado = new ResultadoSub(cantidadTxt.getText(), precioTxt.getText());
-			int resultadoSub=resultado.getResultadoSub();
-			ResultadoIVA resultadoI = new ResultadoIVA(cantidadTxt.getText(), precioTxt.getText());
-			double resultadoIVA=resultadoI.getResultadoIVA();
-			ResultadoTotal resultadoT = new ResultadoTotal(cantidadTxt.getText(), precioTxt.getText());
-			double resultadoTotal=resultadoT.getResultadoTotal()+resultadoI.getResultadoIVA();
+			try{
+				Producto precio = new Producto(precioTxt.getText());
+				Producto cantidad = new Producto(cantidadTxt.getText());
+				ResultadoSub resultado = new ResultadoSub(cantidadTxt.getText(), precioTxt.getText());
+				int resultadoSub=resultado.getResultadoSub();
+				ResultadoIVA resultadoI = new ResultadoIVA(cantidadTxt.getText(), precioTxt.getText());
+				double resultadoIVA=resultadoI.getResultadoIVA();
+				ResultadoTotal resultadoT = new ResultadoTotal(cantidadTxt.getText(), precioTxt.getText());
+				double resultadoTotal=resultadoT.getResultadoTotal()+resultadoI.getResultadoIVA();
+				textArea.setText("Subtotal: \n" +resultadoSub+ "\n" +"IVA : \n"+resultadoIVA +"\n Total: \n" +resultadoTotal);
+				}
 
-			textArea.setText("Subtotal: \n" +resultadoSub+ "\n" +"IVA : \n"+resultadoIVA +"\n Total: \n" +resultadoTotal);
+			catch(NegativaException n){
+				System.out.println(n.getMessage());
+				precioTxt.textProperty().addListener(new ChangeListener<String>() {
+			//obliga a poner valores positivos, no deja poner el signo negativo
+	    		@Override
+		    	public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+		        	if (!newValue.matches("\\d*")) {
+		            	precioTxt.setText(newValue.replaceAll("[^\\d]", ""));
+					}
+				}
+				});
+				cantidadTxt.textProperty().addListener(new ChangeListener<String>() {
+	    		@Override
+		    	public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+		        	if (!newValue.matches("\\d*")) {
+		            	cantidadTxt.setText(newValue.replaceAll("[^\\d]", ""));
+		            }
+		        }
+		   	 	});
+			}	
 		}
 	}
-
 }
+
+
+
