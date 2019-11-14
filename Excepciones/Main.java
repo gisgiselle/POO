@@ -82,7 +82,15 @@ public class Main extends Application{
 			catch(Exception t){
 				System.out.println(t.getMessage());
 				t.printStackTrace();
-			}
+            }
+            try{
+                textArea.setText("Nombre \n " + nombreTxt.getText()+ "\n SKU: \n"+ skuTxt.getText()+ "\n Cantidad: \n"+cantidadTxt.getText()+"\n Precio: \n"+precioTxt.getText());
+           }
+           catch(TextVacioException v){
+               System.out.println(v.getMessage());
+               
+           }
+           
 		}
 	}
 
@@ -124,6 +132,3 @@ public class Main extends Application{
 		}
 	}
 }
-
-
-
