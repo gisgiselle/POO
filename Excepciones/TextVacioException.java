@@ -1,6 +1,5 @@
 public class TextVacioException extends Exception{
         public TextVacioException(){
-                super("Llena el espacio");
-	}
-	}
-
+                System.out.println("Llena el espacio");
+		}
+}

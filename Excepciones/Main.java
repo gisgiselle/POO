@@ -56,7 +56,24 @@ public class Main extends Application{
 		
 		Button bCalcular= new Button("Calcular");
 		vbox.getChildren().add(bCalcular);	
-		
+
+		//obliga a poner valores positivos, no deja poner el signo negativo ni otra cosa que no sea numero
+		precioTxt.textProperty().addListener(new ChangeListener<String>() {
+		@Override
+    	public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+        	if (!newValue.matches("\\d*")) {
+            	precioTxt.setText(newValue.replaceAll("[^\\d]", ""));
+			}
+		}
+		});
+		cantidadTxt.textProperty().addListener(new ChangeListener<String>() {
+		@Override
+    	public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+        	if (!newValue.matches("\\d*")) {
+            	cantidadTxt.setText(newValue.replaceAll("[^\\d]", ""));
+            }
+        }
+   	 	});		
 
 		bAgregar.addEventHandler(MouseEvent.MOUSE_CLICKED, new 	AgregarHandler());
 		bCalcular.addEventHandler(MouseEvent.MOUSE_CLICKED, new CalcularHandler());
@@ -83,13 +100,6 @@ public class Main extends Application{
 				System.out.println(t.getMessage());
 				t.printStackTrace();
             }
-            try{
-                textArea.setText("Nombre \n " + nombreTxt.getText()+ "\n SKU: \n"+ skuTxt.getText()+ "\n Cantidad: \n"+cantidadTxt.getText()+"\n Precio: \n"+precioTxt.getText());
-           }
-           catch(TextVacioException v){
-               System.out.println(v.getMessage());
-               
-           }
            
 		}
 	}
@@ -98,8 +108,12 @@ public class Main extends Application{
 	public class CalcularHandler implements EventHandler <MouseEvent>{
 		public void handle(MouseEvent e){
 			try{
+					
 				Producto precio = new Producto(precioTxt.getText());
 				Producto cantidad = new Producto(cantidadTxt.getText());
+				Producto nombre = new Producto(nombreTxt.getText());
+				Producto sku = new Producto(skuTxt.getText());
+
 				ResultadoSub resultado = new ResultadoSub(cantidadTxt.getText(), precioTxt.getText());
 				int resultadoSub=resultado.getResultadoSub();
 				ResultadoIVA resultadoI = new ResultadoIVA(cantidadTxt.getText(), precioTxt.getText());
@@ -111,24 +125,13 @@ public class Main extends Application{
 
 			catch(NegativaException n){
 				System.out.println(n.getMessage());
-				precioTxt.textProperty().addListener(new ChangeListener<String>() {
-			//obliga a poner valores positivos, no deja poner el signo negativo
-	    		@Override
-		    	public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-		        	if (!newValue.matches("\\d*")) {
-		            	precioTxt.setText(newValue.replaceAll("[^\\d]", ""));
-					}
-				}
-				});
-				cantidadTxt.textProperty().addListener(new ChangeListener<String>() {
-	    		@Override
-		    	public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-		        	if (!newValue.matches("\\d*")) {
-		            	cantidadTxt.setText(newValue.replaceAll("[^\\d]", ""));
-		            }
-		        }
-		   	 	});
+
 			}	
+
+			catch(TextVacioException v){
+               //System.out.println(v.getMessage());   
+               textArea.setText("esta vcacio");
+           }
 		}
 	}
 }
