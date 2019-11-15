@@ -1,4 +1,7 @@
 import personaje.*;
+
+
+
 public abstract class Boss extends Personaje{
 
 private Habilidad[] habilidades;

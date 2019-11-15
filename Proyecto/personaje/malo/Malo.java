@@ -1,6 +1,5 @@
 
-package personaje.Malo;
-import personaje.*;
+package personaje;
 
 
 
@@ -8,9 +7,14 @@ public abstract class Malo extends Personaje implements AccionesMalo {
 		private AtaqueEspecial[] ataquesEspeciales; 
 		private Habilidad[] habilidades;
 
+
+
+
 		public Malo(String nombre, int hp, int ataque, int defensa ){
 			super(nombre, hp, ataque, defensa);
 			this.tipo= tipo;
+
+
 
 		}	
 			public ataqueEspecial[] getAtaquesEspeciales(){
