@@ -6,8 +6,8 @@ public abstract class Boss extends Personaje{
 private Habilidad[] habilidades;
 
 
-public Boss(String nombre, int hp, int ataque, int defensa){
-		super(nombre, hp, ataque, defensa);
+public Boss(String tipo, String nombre, int hp, int ataque, int defensa){
+		super(tipo, nombre, hp, ataque, defensa);
 
 }
 

@@ -5,7 +5,8 @@ public class Regla extends Arma{
 		super("Regla", 2);
 	}
 	public  double damage(){
-		return(puntos);
+		Main main = new Main();
+		return((main.getTipo()).getHp() - puntos);
 	}
-	
 }
+	

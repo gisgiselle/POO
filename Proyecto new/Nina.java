@@ -3,7 +3,7 @@
 public class Nina extends Heroe{
 
 	public Nina(){
-		super("Nina",150,40,20,30);
+		super("healer","Nina",150,40,20,30);
 		Habilidad[] habilidades= new Habilidad[4];
 		habilidades[0] = new Habilidad("baia baia",15);
 		habilidades[1] = new Habilidad("Ternura",20);

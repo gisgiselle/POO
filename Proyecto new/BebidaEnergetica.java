@@ -5,6 +5,7 @@ public class BebidaEnergetica extends ObjetoSp{
 	}
 
 	public  double recoverSp(){
-		return(sp + puntos);
+		Main main = new Main();
+		return((main.getTipo()).getSp() + puntos);
 	}
 }

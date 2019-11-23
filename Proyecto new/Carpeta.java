@@ -5,6 +5,7 @@ public class Carpeta extends ObjetoDefensa{
 		super("Carpeta", 15);
 	}
 	public  double protect(){
-		return(defensa + puntos);
+		Main main = new Main();
+		return((main.getTipo()).getDefensa() + puntos);
 	}
 }

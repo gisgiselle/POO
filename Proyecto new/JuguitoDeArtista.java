@@ -5,7 +5,7 @@ public class JuguitoDeArtista extends ObjetoHp{
 		super("Juguito de Artista", 13);
 	}
 	public  double protect(){
-		Casilla casilla = new Casilla();
-		return((casilla.getHeroe()).getHp() + puntos);
+		Main main = new Main();
+		return((main.getTipo()).getHp() + puntos);
 	}
 }

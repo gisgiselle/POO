@@ -3,7 +3,7 @@
 public class Nubesina extends Malo{
 
 	 public Nubesina(){
-	 		super("Nubesina", 50, 10, 5);
+	 		super("noche","Nubesina", 50, 10, 5);
 
 			AtaqueEspecial[] ataquesEspeciales = new AtaqueEspecial[3];
 			ataquesEspeciales[0] = new AtaqueEspecial("Lluvia Salvaje",10);

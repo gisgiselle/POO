@@ -18,11 +18,11 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.IOException;
 public class Main extends Application{
-    private Scene intro = new Intro(this);
+    private Scene intro = new FirstScene(this);
     private Scene ePersonaje= new EscogerPersonaje(this);
     private Scene mapa1,mapa2,mapa3,mapa4,mapaF,m;
     private Stage mainStage;
-    private Heroe heroe;
+    private Heroe h;
     private SceneBatalla sb;
     private BorderPane u;
 
@@ -36,6 +36,13 @@ public class Main extends Application{
         intro.getStylesheets().add("Styles.css");
         mainStage.show();
         
+    }
+        public Heroe getTipo(){
+            return h;
+    }
+
+    public void setTipo(Heroe h){
+        this.h=h;
     }
     public void guardar(Scene sc){
     try{
@@ -74,6 +81,12 @@ public class Main extends Application{
         }
         return m;
     }
-
+     public void setScene4(int xx, int yy,boolean encontroArma,boolean encontroDefensa,boolean entroPelea,boolean agarroVida,boolean agarroEnergia){
+        Personaje malo= new Sombra(); 
+        Boss boss= new Grito();
+        Mapa2 mapa2 = new Mapa2(h,this,xx,yy,malo,boss,2,5,4,encontroArma,encontroDefensa,entroPelea,agarroVida,agarroEnergia);
+        guardar(mapa2);
+        mainStage.setScene(mapa2);
+    }
 }
    

@@ -4,7 +4,7 @@
 public class Sam extends Heroe{
 
 	public Sam(){
-		super("Sam",100,50,30,20);
+		super("dps","Sam",100,50,30,20);
 		Habilidad[] habilidades= new Habilidad[4];
 		habilidades[0] = new Habilidad("Aventada de tenis",16);
 		habilidades[1] = new Habilidad("Ojitos tiernos",20);

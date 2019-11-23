@@ -5,6 +5,7 @@ public class Chamarra extends ObjetoDefensa{
 		super("Chamarra", 10);
 	}
 	public  double protect(){
-		return(defensa + puntos);
+		Main main = new Main();
+		return((main.getTipo()).getDefensa() + puntos);
 	}
 }

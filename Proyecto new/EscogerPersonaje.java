@@ -24,7 +24,7 @@ public class EscogerPersonaje extends Scene{
            
             public void handle(MouseEvent e){   
               Heroe h= new Chucho();
-              main.setHeroe(h);                 
+              main.setTipo(h);                 
               main.setScene3(0,0,false,false,false,false,false);         
             }
         });
@@ -35,7 +35,7 @@ public class EscogerPersonaje extends Scene{
         nina.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
             public void handle(MouseEvent e){ 
                 Heroe h = new Nina(); 
-                main.setHeroe(h);             
+                main.setTipo(h);             
                 main.setScene3(0,0,false,false,false,false,false);
             }
         });
@@ -45,7 +45,7 @@ public class EscogerPersonaje extends Scene{
         ricky.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
             public void handle(MouseEvent e){  
                 Heroe h = new Ricky();  
-                main.setHeroe(h);           
+                main.setTipo(h);           
                 main.setScene3(0,0,false,false,false,false,false);
             }
         });
@@ -55,7 +55,7 @@ public class EscogerPersonaje extends Scene{
         sam.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
             public void handle(MouseEvent e){  
                 Heroe h = new Ricky();  
-                main.setHeroe(h);           
+                main.setTipo(h);           
                 main.setScene3(0,0,false,false,false,false,false);
             }
         });

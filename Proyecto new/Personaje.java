@@ -4,7 +4,7 @@ public abstract class Personaje{
 	private String nombre; 
 	private int hp, ataque, defensa;
 
-	public Personaje(String nombre, int hp, int ataque, int defensa){
+	public Personaje(String tipo, String nombre, int hp, int ataque, int defensa){
 		this.nombre=nombre;
 		this.hp=hp;
 		this.ataque=ataque;
@@ -48,7 +48,20 @@ public abstract class Personaje{
 		return ataque;
 
 	}
+		public Label getImg(){
+		return img;
+	}
+	public void setImg(Label img){
+		this.img=img;
+	}
+	public String getTipo(){
+			return tipo;
+	}
+	public void setTipo(String tipo){
+					this.tipo= tipo;
 
+
+	}
 
 	//public abstract void pelea();
 	

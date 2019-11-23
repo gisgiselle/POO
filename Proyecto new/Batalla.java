@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Batalla{
 
-	public static void iniciarBatalla(Heroe p1, Personaje p2){
+	public static void iniciarBatalla(Heroe p1, Malo p2){
 		while(p1.getHp()>0&&p2.getHp()>0){
 
 			System.out.println("Como quieres atacar? 1) Normal 2) Habilidad 3) Objeto");
@@ -37,7 +37,7 @@ public class Batalla{
 
 			}
 
-			p2.atacar(p1);
+			p2.atacarHeroe(p1);
 
 			System.out.println(p1.toString());
 			System.out.println(p2.toString());

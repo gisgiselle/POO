@@ -3,7 +3,7 @@
 public class Ricky extends Heroe{
 
 	public Ricky(){
-		super("Ricky",250,10,10,15);
+		super("tanque","Ricky",250,10,10,15);
 		Habilidad[] habilidades= new Habilidad[4];
 		habilidades[0] = new Habilidad("Déficit de Atención",15);
 		habilidades[1] = new Habilidad("Hiperactividad",8);

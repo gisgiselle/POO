@@ -28,15 +28,6 @@ public class Casilla extends StackPane{
 		}
 	}
 
-	public Heroe getHeroe(){
-		return heroe;
-	}
-
-	public void setHeroe(Heroe heroe){
-		this.heroe=heroe;
-	}
-
-
 
 	public Malo getMalo(){
 		return malo;

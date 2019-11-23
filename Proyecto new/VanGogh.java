@@ -2,7 +2,7 @@
 public class VanGogh extends Boss{
 	
 	public VanGogh(){
-		super("Van Gogh", 250, 40, 25);
+		super("noche","Van Gogh", 250, 40, 25);
 
 Habilidad[] habilidades= new Habilidad[4];
 		habilidades[0] = new Habilidad("Pinturazo",20);

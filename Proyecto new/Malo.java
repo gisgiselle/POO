@@ -7,8 +7,8 @@ public abstract class Malo extends Personaje implements AccionesMalo {
 
 
 
-		public Malo(String nombre, int hp, int ataque, int defensa){
-			super(nombre, hp, ataque, defensa);
+		public Malo(String tipo,String nombre, int hp, int ataque, int defensa){
+			super(tipo,nombre, hp, ataque, defensa);
 
 
 		}	

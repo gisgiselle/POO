@@ -6,6 +6,7 @@ public class Curita extends ObjetoHp{
 		super("Curita", 10);
 	}
 	public  double heal(){
-		return(hp + puntos);
+		Main main = new Main();
+		return((main.getTipo()).getHp() + puntos);
 	}
 }

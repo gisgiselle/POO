@@ -5,8 +5,8 @@ public abstract class Heroe extends Personaje implements Ataques{
 	private int x, y; 
 	private Objeto[] mochila;
 
-	public Heroe(String nombre, int hp, int ataque, int defensa, int poderEspecial){
-		super(nombre,hp,ataque,defensa);
+	public Heroe(String tipo,String nombre, int hp, int ataque, int defensa, int poderEspecial){
+		super(tipo,nombre,hp,ataque,defensa);
 		this.x=x;
 		this.y=y;
 	} 

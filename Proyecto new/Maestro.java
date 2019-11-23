@@ -2,7 +2,7 @@
 
 public class Maestro extends Boss {
 public Maestro(){
-		super("Maestro", 350, 35 ,30 );
+		super("Final","Maestro", 350, 35 ,30 );
 
 		Habilidad[] habilidades= new Habilidad[4];
 		habilidades[0] = new Habilidad("Regaño",20);

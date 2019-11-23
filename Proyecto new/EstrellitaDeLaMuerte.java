@@ -3,7 +3,7 @@
 public class EstrellitaDeLaMuerte extends Malo{
 
 	 public EstrellitaDeLaMuerte(){
-	 		super("EstrellitaDeLaMuerte", 50, 15, 5);
+	 		super("noche","EstrellitaDeLaMuerte", 50, 15, 5);
 
 	 		AtaqueEspecial[] ataquesEspeciales = new AtaqueEspecial[3];
 			ataquesEspeciales[0] = new AtaqueEspecial("Brillo Letal",10);

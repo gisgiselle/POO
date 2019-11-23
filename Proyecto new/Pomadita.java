@@ -5,7 +5,7 @@ public class Pomadita extends ObjetoHp{
 		super("Pomadita", 15);
 	}
 	public double heal(){
-		Casilla casilla = new Casilla();
-		return((casilla.getHeroe()).getHp() + puntos);
+		Main main = new Main();
+		return((main.getTipo()).getHp() + puntos);
 	}
 }

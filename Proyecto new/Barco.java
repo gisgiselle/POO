@@ -3,7 +3,7 @@
 public class Barco extends Malo{
 
 	 public Barco(){
-	 		super("Barco", 100, 25, 15);
+	 		super("marino","Barco", 100, 25, 15);
 			
 			ataqueEspecial[] ataquesEspeciales = new ataqueEspecial[3];
 			ataquesEspeciales[0] = new AtaqueEspecial("Canon",10);

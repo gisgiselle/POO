@@ -5,8 +5,8 @@ public class PinturaVerde extends Arma{
 		super("Pintura Verde", 3);
 	}
 	public  double damage(){
-		Casilla casilla = new Casilla();
-		return(puntos-(casilla.getHeroe()).getHp());
+		Main main = new Main();
+		return((main.getTipo()).getHp() - puntos);
 	}	
 	
 }

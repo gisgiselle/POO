@@ -15,11 +15,11 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import java.io.Serializable;
 
-public class Mapa1 extends MapaBase implements Serializable{
+public class Mapa2 extends MapaBase implements Serializable{
     private Heore h;
     private int mochila,sE,sHp;
    
-    public Mapa1(Heroe h, Main main, int i, int j, Personaje malo, Boss boss, int mochila,int sHp,int sE,boolean encontroArma,boolean encontroDefensa,boolean entroPelea,boolean agarroVida,boolean agarroEnergia){
+    public Mapa2(Heroe h, Main main, int i, int j, Personaje malo, Boss boss, int mochila,int sHp,int sE,boolean encontroArma,boolean encontroDefensa,boolean entroPelea,boolean agarroVida,boolean agarroEnergia){
        
        super(h,main,4,6,8,5,8,8,i,j,malo,boss,mochila,sHp,sE,encontroArma,encontroDefensa,entroPelea,agarroVida,agarroEnergia);
        this.h=h;  
@@ -28,17 +28,24 @@ public class Mapa1 extends MapaBase implements Serializable{
        this.sHp=sHp; 
     }
 
+    public void CosoHp(int mochila){
+        this.mochila=mochila;
+        ObjetoHp mama= new ObjetoHp("Motivación de mamá",30);
+        h.addObjetoToMochila(mama,mochila);
+        mochila++;
+        super.setMochila1(mochila);
+    }
     public void Arma(int mochila){
         this.mochila=mochila;
-        Arma pincel= new Arma("Pincel",7);
-        h.addObjetoToMochila(pincel,mochila);
+        Arma lapiz= new Arma("lapiz",5);
+        h.addObjetoToMochila(lapiz,mochila);
         mochila++;
         super.setMochila1(mochila);
     }
     public void Defensa(int mochila){
         this.mochila=mochila;
-        ObjetoDefensa cuaderno= new ObjetoDefensa("cuaderno",5);
-        h.addObjetoToMochila(cuaderno,mochila);
+        ObjetoDefensa chamarra= new ObjetoDefensa("chamarra",10);
+        h.addObjetoToMochila(chamarra,mochila);
         mochila++;
         super.setMochila1(mochila);
     }

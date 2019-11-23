@@ -3,7 +3,7 @@
 public class AlmaTorturada extends Malo{
 
 	 public AlmaTorturada(){
-	 		super("AlmaTorturada", 100, 25, 10);
+	 		super("grito","AlmaTorturada", 100, 25, 10);
 
 
 	 		AtaqueEspecial[] ataquesEspeciales = new ataqueEspecial[3];

@@ -5,7 +5,7 @@ public class Lapiz extends Arma{
 		super("Lapiz", 7);
 	}
 	public  double damage(){
-		Casilla casilla = new Casilla();
-		return(puntos-(casilla.getHeroe()).getHp());
+		Main main = new Main();
+		return((main.getTipo()).getHp() - puntos);
 	}	
 }

@@ -3,7 +3,7 @@
 public class Sombra extends Malo{
 
 	 public Sombra(){
-	 		super("Sombra", 100, 5, 15);
+	 		super("grito","Sombra", 100, 5, 15);
 	 		
 	 		AtaqueEspecial[] ataquesEspeciales = new AtaqueEspecial[3];
 			ataquesEspeciales[0] = new AtaqueEspecial("Suspiro",10);

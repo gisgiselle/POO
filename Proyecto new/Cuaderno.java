@@ -5,6 +5,7 @@ public class Cuaderno extends ObjetoDefensa{
 		super("Cuaderno", 13);
 	}
 	public  double protect(){
-		return(defensa + puntos);
+		Main main = new Main();
+		return((main.getTipo()).getDefensa() + puntos);
 	}
 }
