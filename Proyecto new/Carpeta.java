@@ -6,4 +6,5 @@ public class Carpeta extends ObjetoDefensa{
 	}
 	public  double protect(){
 		return(defensa + puntos);
+	}
 }

@@ -5,5 +5,7 @@ public class Lentes extends ObjetoDefensa{
 		super("Lentes", 7);
 	}
 	public  double protect(){
-		return(defensa + puntos);
+		Casilla casilla = new Casilla();
+		return((casilla.getHeroe()).getDefensa() + puntos);
+	}
 }

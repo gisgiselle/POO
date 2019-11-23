@@ -1,6 +1,6 @@
 public abstract class Objeto implements Material{
 	private String nombre;
-	private int puntos;
+	 int puntos;
 
 	public Objeto(String nombre, int puntos){
 		this.nombre=nombre;
@@ -22,5 +22,6 @@ public abstract class Objeto implements Material{
 		return puntos;
 	}	
 
-	public abstract equiparObjeto();
+	//public abstract equiparObjeto();
+
 }

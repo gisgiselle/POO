@@ -34,7 +34,7 @@ public abstract class MapaBase extends Scene implements Serializable{
     private Label bienvenido= new Label("Bienvenido al mapa");
 
    
-    public MapaBase(Heroe h, Main main,int b1, int b2, int a1, int a2, int d1, int d2, int i, int j, Personaje malo, Boss boss,int mochila,int sHp,int sE,boolean encontroArma,boolean encontroDefensa,boolean entroPelea,boolean agarroVida,boolean agarroEnergia){
+    public MapaBase(Heroe h, Casilla c, Main main,int b1, int b2, int a1, int a2, int d1, int d2, int i, int j, Personaje malo, Boss boss,int mochila,int sHp,int sE,boolean encontroArma,boolean encontroDefensa,boolean entroPelea,boolean agarroVida,boolean agarroEnergia){
 
        super(new GridPane(),800,900);
        this.main=main;
@@ -52,7 +52,7 @@ public abstract class MapaBase extends Scene implements Serializable{
        this.boss=boss;     
        this.sE=sE;
        this.sHp=sHp; 
-       nom=h.getHeroe();
+       nom=h.getNombre();
        //mensaje.setPrefSize(600,50);
        primeraVez=i;
        primeraVez2=j;
@@ -191,7 +191,7 @@ public abstract class MapaBase extends Scene implements Serializable{
                         }
                         if(((i==d1)&&(j==d2))&&(encontroDefensa==false)){
                             ObjetoDefensa obD = new ObjetoDefensa("defensa", 2);
-                            h.addObjetoToMochila(obD, 2)
+                            h.addObjetoToMochila(obD, 2);
                             String inventario=h.imprimeInventario();
                             //mensaje.setText("Es un objeto de defensa "+inventario);
                             m2.setBottom(abajo);

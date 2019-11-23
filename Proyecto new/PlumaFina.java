@@ -2,8 +2,10 @@
 public class PlumaFina extends Arma{
 
 	public PlumaFina(){
-		super("Pluma Fina", 1.8);
+		super("Pluma Fina", 1);
 	}
 	public  double damage(){
-		return(ataque*puntos);
+		Casilla casilla = new Casilla();
+		return(puntos-(casilla.getHeroe()).getHp());
+	}
 }

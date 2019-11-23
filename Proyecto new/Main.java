@@ -37,18 +37,43 @@ public class Main extends Application{
         mainStage.show();
         
     }
+    public void guardar(Scene sc){
+    try{
+        FileOutputStream fout = new FileOutputStream("mapa.atm");
+        ObjectOutputStream oos = new ObjectOutputStream(fout);
+        oos.writeObject(sc);
+        oos.close();
+    }catch(IOException ex){
+
+        } 
+}
     public void setScene2(){
         mainStage.setScene(ePersonaje);    
     }
     public void setScene3(int x, int y,boolean encontroArma,boolean encontroDefensa,boolean entroPelea,boolean agarroVida,boolean agarroEnergia){
-    if(x==9&&y==9){setScene4(0,0,encontroArma,encontroDefensa,entroPelea,agarroVida,agarroEnergia);   
-    }else{
+        if(x==9&&y==9){setScene4(0,0,encontroArma,encontroDefensa,entroPelea,agarroVida,agarroEnergia);   
+        }else{
         Personaje malo= new EstrellitaDeLaMuerte(); 
         Boss boss= new VanGogh();
-        mapa = new Mapa1(h, this,x,y,malo,boss,0,7,3,encontroArma,encontroDefensa,entroPelea,agarroVida,agarroEnergia);
+        Mapa1 mapa1 = new Mapa1(h, this,x,y,malo,boss,0,7,3,encontroArma,encontroDefensa,entroPelea,agarroVida,agarroEnergia);
         mainStage.setScene(mapa1);                     
         guardar(mapa1);
   
-  }  }
+        }  
+    }
+    public Scene mostrar(){
+        try{
+            File selectedFile = new File("mapa.atm");
+            FileInputStream fin = new FileInputStream(selectedFile);
+            ObjectInputStream ois = new ObjectInputStream(fin);
+            m=(Scene) ois.readObject();
+        }catch(IOException ex){
+            ex.printStackTrace();
+        }catch(ClassNotFoundException ex){
+            ex.printStackTrace();
+        }
+        return m;
+    }
+
 }
    

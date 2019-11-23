@@ -6,4 +6,5 @@ public class Cuaderno extends ObjetoDefensa{
 	}
 	public  double protect(){
 		return(defensa + puntos);
+	}
 }

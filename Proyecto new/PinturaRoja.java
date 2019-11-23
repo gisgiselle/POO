@@ -2,9 +2,11 @@
 public class PinturaRoja extends Arma{
 
 	public PinturaRoja(){
-		super("Pintura Roja", 1.2);
+		super("Pintura Roja", 1);
 	}
 	public  double damage(){
-		return(ataque*puntos);
+		Casilla casilla = new Casilla();
+		return(puntos-(casilla.getHeroe()).getHp());
+	}
 	
 }

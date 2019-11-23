@@ -1,8 +1,7 @@
 
-//clase abstracta porque implementa una interface
 public abstract class Heroe extends Personaje implements Ataques{
 	private Habilidad[] habilidades;
-	private int sp
+	private int sp;
 	private int x, y; 
 	private Objeto[] mochila;
 
@@ -10,14 +9,14 @@ public abstract class Heroe extends Personaje implements Ataques{
 		super(nombre,hp,ataque,defensa);
 		this.x=x;
 		this.y=y;
-	}
+	} 
 	public Habilidad[] getHabilidades(){
 		return habilidades;
 	}
 	public void setHabilidades(Habilidad[] habilidades){
 		this.habilidades=habilidades;
 	}
-	public int[] getX(){
+	public int getX(){
 		return x;
 	}
 	public void setX(int x){

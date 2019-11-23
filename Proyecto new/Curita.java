@@ -7,4 +7,5 @@ public class Curita extends ObjetoHp{
 	}
 	public  double heal(){
 		return(hp + puntos);
+	}
 }

@@ -4,5 +4,7 @@ public class Notas extends ObjetoSp{
 		super("Notas", 10);
 	}
 	public  double recoverSp(){
-		return(sp + puntos);
+		Casilla casilla = new Casilla();
+		return((casilla.getHeroe()).getSp() + puntos);
+	}
 }

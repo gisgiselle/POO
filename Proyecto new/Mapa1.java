@@ -19,9 +19,9 @@ public class Mapa1 extends MapaBase implements Serializable{
     private Heore h;
     private int mochila,sE,sHp;
    
-    public Mapa1(Heroe h, Main main, int i, int j, Personaje malo, Boss boss, int mochila,int sHp,int sE,boolean encontroArma,boolean encontroDefensa,boolean entroPelea,boolean agarroVida,boolean agarroEnergia){
+    public Mapa1(Heroe h,Casilla c, Main main, int i, int j, Personaje malo, Boss boss, int mochila,int sHp,int sE,boolean encontroArma,boolean encontroDefensa,boolean entroPelea,boolean agarroVida,boolean agarroEnergia){
        
-       super(h, main,4,6,8,5,8,8,i,j,malo,boss,mochila,sHp,sE,encontroArma,encontroDefensa,entroPelea,agarroVida,agarroEnergia);
+       super(h, c,main,4,6,8,5,8,8,i,j,malo,boss,mochila,sHp,sE,encontroArma,encontroDefensa,entroPelea,agarroVida,agarroEnergia);
        this.h=h;  
        this.mochila=mochila;    
        this.sE=sE;

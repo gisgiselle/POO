@@ -6,4 +6,5 @@ public class Chamarra extends ObjetoDefensa{
 	}
 	public  double protect(){
 		return(defensa + puntos);
+	}
 }

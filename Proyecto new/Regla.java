@@ -2,9 +2,10 @@
 public class Regla extends Arma{
 
 	public Regla(){
-		super("Regla", 2.3);
+		super("Regla", 2);
 	}
 	public  double damage(){
-		return(ataque*puntos);
+		return(puntos);
+	}
 	
 }

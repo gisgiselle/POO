@@ -2,9 +2,12 @@
 public class Pincel extends Arma{
 
 	public Pincel(){
-		super("Pincel", 2.1);
+		super("Pincel", 2);
 	}
 	public  double damage(){
-		return(ataque*puntos);
+				Casilla casilla = new Casilla();
+
+		return(puntos-(casilla.getHeroe()).getHp());
+	}
 	
 }
