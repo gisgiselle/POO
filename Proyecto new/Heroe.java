@@ -2,7 +2,8 @@
 public abstract class Heroe extends Personaje implements Ataques{
 	private Habilidad[] habilidades;
 	private int sp;
-	private int x, y; 
+	private int x, y, numVidas;
+	private int punch;
 	private Objeto[] mochila;
 
 	public Heroe(String tipo,String nombre, int hp, int ataque, int defensa, int poderEspecial){
@@ -64,17 +65,54 @@ public abstract class Heroe extends Personaje implements Ataques{
 		resultado=resultado;
 		return resultado;
 	}
-	public void atacar(Personaje malo, Habilidad habilidad){
-		malo.setHp(malo.getHp()-(habilidad.getPuntosEspeciales()-malo.getDefensa()));
+public void atacar(Boss m, int i){
+		switch(i){
+			case 1:
+			super.atacar(m);
+			break;
+			default:
+			if(getSp()>=3){m.setHp(m.getHp()-(punch-m.getDefensa())); 
+			setSp(getSp()-3);
+			}else{
+				System.out.println("No tienes suficiente energía");
+			}
+			break;
+		}
+		
 	}
-	public void atacar(Personaje malo, Objeto objeto){
-		malo.setHp(malo.getHp()-(objeto.getPuntos()-malo.getDefensa()));
+	public void atacar(Boss m, Objeto a,int index){
+		if(getSp()>=a.getMenosE()){
+			if(a.getClass()==Objeto.class){
+			m.setHp(m.getHp()-(a.getPuntosO()+getAtaque()-m.getDefensa()));
+			setSp(getSp()-a.getMenosE());
+			removeObjetoFromMochila(index);
+			}else{
+				setHp(getHp()+m.getAtaque()-getDefensa());
+				m.setHp(m.getHp()-(m.getAtaque()));
+				setSp(getSp()-a.getMenosE());
+				removeObjetoFromMochila(index);
+			}
+			}else{
+			System.out.println("UPS, no tienes suficiente energía, pierdes tú turno");
+			
+		}
 	}
-	public void setHabilidades(Habilidad[] habilidades){
-		this.habilidades=habilidades;
+	public void atacar(Boss b, Habilidad h){
+		if(setSp()>=3){
+		b.setHp(b.getHp()-(h.getPuntosEspeciales()-b.getDefensa()));
+		setSp(getSp()-5); 
+		}else{
+			System.out.println("No tienes suficiente energía");
+		}
 	}
-	public Habilidad[] getHabilidades(){
-		return habilidades;
+
+	public int getNumVidas(){
+		return numVidas;
 	}
+
+	public void setNumVidas(int numVidas){
+		this.numVidas=numVidas;
+	}
+
 }
 

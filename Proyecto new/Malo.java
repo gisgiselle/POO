@@ -1,6 +1,6 @@
 
 
-public abstract class Malo extends Personaje implements AccionesMalo {
+public class Malo extends Personaje {
 		private AtaqueEspecial[] ataquesEspeciales; 
 		private Habilidad[] habilidades;
 

@@ -18,4 +18,5 @@ public class Sam extends Heroe{
 			public void atacar(Boss boss){
 		System.out.println("Ataque normal de Chucho");
 	boss.setHp(boss.getHp()-(boss.getAtaque()-boss.getDefensa()));	}
+	
 }

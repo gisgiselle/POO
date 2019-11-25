@@ -178,11 +178,11 @@ public abstract class MapaBase extends Scene implements Serializable{
                             agarroEnergia=true;
                         }
                         if(((i==b1)&&(j==b2))&&(entroPelea==false)){             
-                            h.atacar(malo);
+                            h.atacar(boss);
                             entroPelea=true;
                         }
                         if(((i==a1)&&(j==a2))&&(encontroArma==false)){
-                             Arma arma =new Arma("popo", 10);
+                             Arma arma =new Arma("popo", 10,1);
                              h.addObjetoToMochila(arma, 1);
                            String inventario=h.imprimeInventario();
                             //mensaje.setText("Es un arma "+inventario);
@@ -190,7 +190,7 @@ public abstract class MapaBase extends Scene implements Serializable{
                             encontroArma=true;
                         }
                         if(((i==d1)&&(j==d2))&&(encontroDefensa==false)){
-                            ObjetoDefensa obD = new ObjetoDefensa("defensa", 2);
+                            ObjetoDefensa obD = new ObjetoDefensa("defensa", 2,2);
                             h.addObjetoToMochila(obD, 2);
                             String inventario=h.imprimeInventario();
                             //mensaje.setText("Es un objeto de defensa "+inventario);

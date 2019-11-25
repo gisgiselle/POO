@@ -60,9 +60,9 @@ public class Main extends Application{
     public void setScene3(int x, int y,boolean encontroArma,boolean encontroDefensa,boolean entroPelea,boolean agarroVida,boolean agarroEnergia){
         if(x==9&&y==9){setScene4(0,0,encontroArma,encontroDefensa,entroPelea,agarroVida,agarroEnergia);   
         }else{
-        Personaje malo= new EstrellitaDeLaMuerte(); 
-        Boss boss= new VanGogh();
-        Mapa1 mapa1 = new Mapa1(h, this,x,y,malo,boss,0,7,3,encontroArma,encontroDefensa,entroPelea,agarroVida,agarroEnergia);
+        Malo malo= new Malo("noche","Estrellita de la Muerte", 20, 5, 2); 
+        Boss vanGogh= new Boss("noche", "Van Gogh", 50, 30, 1);
+        Mapa1 mapa1 = new Mapa1(h, this,x,y,malo,vanGogh,0,7,3,encontroArma,encontroDefensa,entroPelea,agarroVida,agarroEnergia);
         mainStage.setScene(mapa1);                     
         guardar(mapa1);
   
@@ -82,9 +82,9 @@ public class Main extends Application{
         return m;
     }
      public void setScene4(int xx, int yy,boolean encontroArma,boolean encontroDefensa,boolean entroPelea,boolean agarroVida,boolean agarroEnergia){
-        Personaje malo= new Sombra(); 
-        Boss boss= new Grito();
-        Mapa2 mapa2 = new Mapa2(h,this,xx,yy,malo,boss,2,5,4,encontroArma,encontroDefensa,entroPelea,agarroVida,agarroEnergia);
+        Malo malo= new Malo("grito", "barco", 30, 7, 3); 
+        Boss grito= new Boss("grito", "El Grito", 120, 40, 6);
+        Mapa2 mapa2 = new Mapa2(h,this,xx,yy,malo,grito,2,5,4,encontroArma,encontroDefensa,entroPelea,agarroVida,agarroEnergia);
         guardar(mapa2);
         mainStage.setScene(mapa2);
     }

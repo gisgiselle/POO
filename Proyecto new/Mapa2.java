@@ -30,21 +30,21 @@ public class Mapa2 extends MapaBase implements Serializable{
 
     public void CosoHp(int mochila){
         this.mochila=mochila;
-        ObjetoHp mama= new ObjetoHp("Motivación de mamá",30);
+        ObjetoHp mama= new ObjetoHp("Motivación de mamá",30,10);
         h.addObjetoToMochila(mama,mochila);
         mochila++;
         super.setMochila1(mochila);
     }
     public void Arma(int mochila){
         this.mochila=mochila;
-        Arma lapiz= new Arma("lapiz",5);
+        Arma lapiz= new Arma("lapiz",5,3);
         h.addObjetoToMochila(lapiz,mochila);
         mochila++;
         super.setMochila1(mochila);
     }
     public void Defensa(int mochila){
         this.mochila=mochila;
-        ObjetoDefensa chamarra= new ObjetoDefensa("chamarra",10);
+        ObjetoDefensa chamarra= new ObjetoDefensa("chamarra",10,5);
         h.addObjetoToMochila(chamarra,mochila);
         mochila++;
         super.setMochila1(mochila);

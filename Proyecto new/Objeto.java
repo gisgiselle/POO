@@ -1,27 +1,31 @@
 public abstract class Objeto implements Material{
 	private String nombre;
-	 int puntos;
+	 private int puntosO;
+	 private int menosE;
 
-	public Objeto(String nombre, int puntos){
+	public Objeto(String nombre, int puntosO,int menosE){
 		this.nombre=nombre;
-		this.puntos=puntos;
+		this.puntosO=puntosO;
+		this.menosE=menosE;
 	}
 
-	public void setNombre(String nombre){
+	public void setNombreO(String nombre){
 		this.nombre=nombre;
 	}
 
-	public String getNombre(){
+	public String getNombreO(){
 		return nombre;
 	}
-	public void setPuntos(int puntos){
+	public void setPuntosO(int puntos){
 		this.puntos=puntos;
 	}
 
-	public int getPuntos(){
+	public int getPuntosO(){
 		return puntos;
 	}	
-
+	public int getMenosE(){
+		return menosE;
+	}
 	//public abstract equiparObjeto();
 
 }

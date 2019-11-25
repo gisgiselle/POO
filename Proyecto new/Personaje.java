@@ -60,8 +60,10 @@ public abstract class Personaje{
 	public void setTipo(String tipo){
 					this.tipo= tipo;
 
-
 	}
+	public void atacar(Boss enemigo){
+            enemigo.setHp(enemigo.getHp()-(getAtaque()-enemigo.getDefensa()));
+    }
 
 	//public abstract void pelea();
 	
