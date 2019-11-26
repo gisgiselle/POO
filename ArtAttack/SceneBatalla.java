@@ -34,6 +34,7 @@ public class SceneBatalla extends Scene implements Serializable{
     private TextField tf;
     private int op,x,y,v;
     private ComboBox atacar;
+    private Scene mapa1;
     public SceneBatalla(Heroe h, Personaje p, int x, int y, Main main){
         super (new BorderPane(),900,900);
         this.main=main;
@@ -182,11 +183,21 @@ public class SceneBatalla extends Scene implements Serializable{
         bp.setCenter(vb);
         
         if(p.getHp()>0&&h.getHp()>0){
-            inicio();}else if(p.getHp()<=0){
+            inicio();
+        }else if(p.getHp()<=0){
             vb.getChildren().add(finalBatalla);
             vb.setSpacing(40);
             finalBatalla.getStyleClass().add("finB");
             bp.setCenter(vb);
+            Button finalizar = new Button("regresar");
+            vb.getChildren().add(finalizar);
+            finalizar.getStyleClass().add("end");       
+            finalizar.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+            public void handle(MouseEvent e){ 
+                main.setScene4(0,0,false,false,false,false,false);
+            }
+        });
+
             setOnKeyPressed(new EventHandler<KeyEvent>() {
             public void handle(KeyEvent ke) {
                     if(ke.getCode() == KeyCode.ENTER) {                                               
@@ -197,6 +208,9 @@ public class SceneBatalla extends Scene implements Serializable{
                             break;
                             case "Sombra":
                                 main.setScene3(x,y,false,false,true,false,false);
+                            break;
+                            case "Maestro":
+                                main.setSceneFinal();
                             break;
                             case "Muro":
                                 main.setSceneMuro(x,y,false,false,true,false,false);

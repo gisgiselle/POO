@@ -25,7 +25,7 @@ import java.io.IOException;
 public class Main extends Application{
     private Scene intro = new Inicio(this);
     private Scene personaje= new EscogerPersonaje(this);
-    private Scene mapa1,mapa2,mapa3,mapa4,ff,m;
+    private Scene mapa1,mapa2,mapa3,mapa4,stats,ff,m;
     private Stage mainStage;
     private Heroe heroe;
     private SceneBatalla sb;
@@ -81,13 +81,18 @@ public class Main extends Application{
         mapa3 = new Mapa3(heroe,this,x3,y3,malo,boss,6,5,5,encontroArma,encontroDefensa,entroPelea,agarroVida,agarroEnergia);
         save(mapa3);
         mainStage.setScene(mapa3);   
-    }     
-   /*
+    }   
+        public void setStats(){
+        stats = new Stats(this);
+        mainStage.setScene(stats);
+        save(stats);
+    } 
+   
     public void setSceneFinal(){
         ff = new Final(this);
         mainStage.setScene(ff);
         save(ff);
-    } */
+    } 
     public void setHeroe(Heroe heroe){
         this.heroe=heroe;
     }

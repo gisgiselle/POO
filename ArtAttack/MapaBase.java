@@ -90,7 +90,7 @@ public abstract class MapaBase extends Scene implements Serializable{
        stats.getStyleClass().add("stats");
        stats.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
             public void handle(MouseEvent e){               
-                m2.setBottom(abajo);
+                 main.setStats();
             }
         });
         m2.setCenter(m1);
@@ -202,13 +202,13 @@ public abstract class MapaBase extends Scene implements Serializable{
                     if(j>=10){j=9;}
                     if(j<=-1){j=0;}
                     switch (nom){
-            case "Chucho":
+             case "Chucho":
                 casilla[i][j].setStyle("-fx-background-image:url('assets/chucho.png'); -fx-background-size: stretch;");break;
-            case "Nina":
+             case "Nina":
                 casilla[i][j].setStyle("-fx-background-image:url('assets/nina.png'); -fx-background-size: stretch;");break;
              case "Ricky":
                 casilla[i][j].setStyle("-fx-background-image:url('assets/ricky.png'); -fx-background-size: stretch;");break;
-            default:
+             default:
                 casilla[i][j].setStyle("-fx-background-image:url('assets/chucho.png'); -fx-background-size: stretch;");break;
         }
                 }
