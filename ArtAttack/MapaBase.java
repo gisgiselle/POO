@@ -124,7 +124,7 @@ public abstract class MapaBase extends Scene implements Serializable{
                         c.setStyle("-fx-background-image:url('assets/cuaderno.png');  -fx-background-color: transparent; -fx-background-size: stretch;");
                         casilla[a][b]=c;
                 }else if(((a==pel)&&(b==pel2))&&(entroPelea==false)){    
-                        c.setStyle("-fx-background-image:url('assets/sur.png'); -fx-background-color: transparent; -fx-background-size: stretch;");
+                        c.setStyle("-fx-background-image:url('assets/monster.png'); -fx-background-color: transparent; -fx-background-size: stretch;");
                         casilla[a][b]=c;
                 }else if(((a==sHp)&&(b==sHp))&&(agarroVida==false)){             
                         c.setStyle("-fx-background-image:url('assets/heart.png'); -fx-background-color: transparent; -fx-background-size: stretch;");
@@ -210,13 +210,13 @@ public abstract class MapaBase extends Scene implements Serializable{
                     if(j<=-1){j=0;}
                     switch (nom){
              case "Chucho":
-                casilla[i][j].setStyle("-fx-background-image:url('assets/chucho.png'); -fx-background-size: stretch;");break;
+                casilla[i][j].setStyle("-fx-background-image:url('assets/chucho.png');-fx-background-color: transparent; -fx-background-size: stretch;");break;
              case "Nina":
-                casilla[i][j].setStyle("-fx-background-image:url('assets/nina.png'); -fx-background-size: stretch;");break;
+                casilla[i][j].setStyle("-fx-background-image:url('assets/nina.png'); -fx-background-color: transparent;-fx-background-size: stretch;");break;
              case "Ricky":
-                casilla[i][j].setStyle("-fx-background-image:url('assets/ricky.png'); -fx-background-size: stretch;");break;
+                casilla[i][j].setStyle("-fx-background-image:url('assets/ricky.png'); -fx-background-color: transparent;-fx-background-size: stretch;");break;
              default:
-                casilla[i][j].setStyle("-fx-background-image:url('assets/chucho.png'); -fx-background-size: stretch;");break;
+                casilla[i][j].setStyle("-fx-background-image:url('assets/chucho.png');-fx-background-color: transparent; -fx-background-size: stretch;");break;
         }
                 }
             }

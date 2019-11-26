@@ -33,7 +33,6 @@ public class SceneBatalla extends Scene implements Serializable{
     private Label finalBatalla= new Label("WOOOO \n GANASTE");
     private TextField tf;
     private int op,x,y,v;
-    private ComboBox atacar;
     private Scene mapa1;
     public SceneBatalla(Heroe h, Personaje p, int x, int y, Main main){
         super (new BorderPane(),900,900);
@@ -50,10 +49,7 @@ public class SceneBatalla extends Scene implements Serializable{
         inicio();
         Label hl=h.getImg();
         Label pl=p.getImg();
-        Label vs= new Label("   VS   "); 
-        vs.getStyleClass().add("vs");
-
-		vb.getChildren().addAll(hl,pl,vs);
+		vb.getChildren().addAll(hl,pl);
         bp.setStyle("-fx-background-image:url('assets/box.jpg'); -fx-background-size: stretch;");
 
         bp.setCenter(hb);
@@ -156,23 +152,11 @@ public class SceneBatalla extends Scene implements Serializable{
         HBox golpes=new HBox();
         golpes.getChildren().addAll(nor,fue);
         golpes.setSpacing(40);
-        atacar= new ComboBox<>();
-        atacar.getItems().add("Habilidad");
-        atacar.getItems().add("Objeto");
-        atacar.getStyleClass().add("combo");
-        vb.getChildren().addAll(elataque,golpes,atacar);
+        vb.getChildren().addAll(elataque,golpes);
 		hb.getChildren().add(vb);
         hb.getChildren().remove(pregunta);
         bp.setCenter(hb);
-        setOnKeyPressed(new EventHandler<KeyEvent>() {
-            public void handle(KeyEvent ke) {
-                if(ke.getCode() == KeyCode.ENTER) {                
-                    String opcion= (String) atacar.getValue();
-                    hb.getChildren().clear();
-                    punch(opcion);
-                }
-            }
-        });
+  
     }
     public void imprimirVida(){
         Label vida = new Label(h.toString());
@@ -182,53 +166,54 @@ public class SceneBatalla extends Scene implements Serializable{
         vb.getChildren().addAll(vida, vidae);
         bp.setCenter(vb);
         
-        if(p.getHp()>0&&h.getHp()>0){
-            inicio();
-        }else if(p.getHp()<=0){
-            vb.getChildren().add(finalBatalla);
-            vb.setSpacing(40);
-            finalBatalla.getStyleClass().add("finB");
-            bp.setCenter(vb);
-            Button finalizar = new Button("regresar");
-            vb.getChildren().add(finalizar);
-            finalizar.getStyleClass().add("end");       
-            finalizar.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
-            public void handle(MouseEvent e){ 
-                main.setScene4(0,0,false,false,false,false,false);
-            }
-        });
+            if(p.getHp()>0&&h.getHp()>0){
+                inicio();
 
-            setOnKeyPressed(new EventHandler<KeyEvent>() {
-            public void handle(KeyEvent ke) {
-                    if(ke.getCode() == KeyCode.ENTER) {                                               
-                        String malo=p.getTipo();
-                        switch(malo){
-                            case "Estrella":                               
-                                main.setScene4(0,0,false,false,false,false,false);
-                            break;
-                            case "Sombra":
-                                main.setScene3(x,y,false,false,true,false,false);
-                            break;
-                            case "Maestro":
-                                main.setSceneFinal();
-                            break;
-                            case "Muro":
-                                main.setSceneMuro(x,y,false,false,true,false,false);
-                            break;
-                            default: System.out.println("no ");
-                            break;
-                        }
-                    }   
+            }else if(p.getHp()<=0){
+                vb.getChildren().add(finalBatalla);
+                vb.setSpacing(40);
+                finalBatalla.getStyleClass().add("finB");
+                bp.setCenter(vb);
+                Button finalizar = new Button("regresar");
+                vb.getChildren().add(finalizar);
+                finalizar.getStyleClass().add("end");       
+                finalizar.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+                public void handle(MouseEvent e){ 
+                    main.setScene4(0,0,false,false,false,false,false);
                 }
             });
-            }else if(h.getHp()<=0){
-                finalBatalla.setText("no ganaste");
-                vb.getChildren().add(finalBatalla);
-                bp.setCenter(vb);
-                h.setHp(100);
-    			p.setHp(v);
-                main.fight(p,x,y);
-            }
 
-    }   
+                setOnKeyPressed(new EventHandler<KeyEvent>() {
+                public void handle(KeyEvent ke) {
+                        if(ke.getCode() == KeyCode.ENTER) {                                               
+                            String malo=p.getTipo();
+                            switch(malo){
+                                case "Estrella":                               
+                                    main.setScene4(0,0,false,false,false,false,false);
+                                break;
+                                case "Sombra":
+                                    main.setScene3(x,y,false,false,true,false,false);
+                                break;
+                                case "Maestro":
+                                    main.setSceneFinal();
+                                break;
+                                case "Muro":
+                                    main.setSceneMuro(x,y,false,false,true,false,false);
+                                break;
+                                default: System.out.println("no ");
+                                break;
+                            }
+                        }   
+                    }
+                });
+                }else if(h.getHp()<=0){
+                    finalBatalla.setText("no ganaste");
+                    vb.getChildren().add(finalBatalla);
+                    bp.setCenter(vb);
+                    h.setHp(100);
+        			p.setHp(v);
+                    main.fight(p,x,y);
+                }
+
+        }   
 }
