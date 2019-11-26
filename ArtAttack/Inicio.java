@@ -23,24 +23,26 @@ public class Inicio extends Scene implements Serializable{
     private MapaBase m;
 
     public Inicio(Main main){
-        super(new BorderPane(),1024,700);
+        super(new BorderPane(),1004,700);
         Label titulo= new Label("Art Attack");
-        Label historia= new Label("Después de meses de esperar emocionado el viaje escolar al museo más hermoso, al fin ha llegado el día.\n Lo que no sabes, es que el maestro Podrick Prater \n "+
-            "(llamado por tus amigos  Mr. Mean Rat por su peculiares orejas y dientes masivos)\n tiene diferentes planes para ustedes.\n" 
+        bp.setStyle("-fx-background-image:url('assets/paint.png'); -fx-background-size: stretch;");
+        titulo.getStyleClass().add("titInicio");
+        Label historia= new Label("Después de meses de esperar emocionado el viaje escolar al museo más hermoso,\n al fin ha llegado el día. Lo que no sabes, es que el maestro Podrick Prater \n "+
+            "(llamado por tus amigos  Mr. Mean Rat por su peculiares orejas y dientes masivos)\n tiene diferentes planes para ustedes." 
             +" Al llegar al museo, descubren que está completamente vacío. \n Emocionados, corren a ver sus pinturas favoritas, dejando atrás a Mr. Mean Rat. "
-        +"\n Ves tu pintura favorita, radiante de colores y la tentación te llena para tocar la pintura, entonces todo oscurece."
-        +"\nDespiertas en un lugar extraño, todo es azul, con una textura peculiar, huele a algo distintivo ¿Es óleo? \n Te das cuenta de que estás en un lugar parecido a la pintura de Van Gogh");
-        
-        Button iniciar= new Button("Empezar historia");
-        Button continuar= new Button("Seguir historia");
-        iniciar.setPrefSize(512,50);
-        iniciar.setStyle("-fx-background-color:green;");
-        continuar.setPrefSize(512,50);
-        continuar.setStyle("-fx-background-color:green");
+        +"\nDespiertas en un lugar extraño, todo es azul, con una textura peculiar,\n huele a algo distintivo ¿Es óleo? \n");
+        historia.getStyleClass().add("hist");
+        Button iniciar= new Button("Nueva");
+        Button continuar= new Button("Continuar");
+        iniciar.setPrefSize(300,50);
+        iniciar.getStyleClass().add("iniciar");
+        continuar.setPrefSize(300,50);
+        continuar.getStyleClass().add("continuar");
         HBox hb= new HBox();
         hb.getChildren().addAll(continuar,iniciar);
+        hb.setSpacing(500);
         bp.setBottom(hb);
-        bp.setAlignment(hb,Pos.BOTTOM_CENTER);
+        bp.setAlignment(hb,Pos.BOTTOM_LEFT);
         iniciar.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
             public void handle(MouseEvent e){               
                 main.setScene2();
@@ -55,7 +57,6 @@ public class Inicio extends Scene implements Serializable{
         VBox his=new VBox();
         his.getChildren().addAll(titulo,historia);
         bp.setCenter(his);
-        bp.setStyle("-fx-background-image:url('assets/inicio.png'); -fx-background-size: stretch;");
         his.setStyle("-fx-alignment: center; -fx-padding: 30px;");
         titulo.setStyle("-fx-alignment: top-center;");
         super.setRoot(bp);

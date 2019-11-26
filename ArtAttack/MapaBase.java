@@ -66,11 +66,13 @@ public abstract class MapaBase extends Scene implements Serializable{
        primeraVez2=j;
         switch (nom){
             case "Chucho":
-                esPersonaje.setStyle("-fx-background-image:url('assets/chucho.jpg'); -fx-background-size: stretch;");break;
+                esPersonaje.setStyle("-fx-background-image:url('assets/chucho.png'); -fx-background-size: stretch;");break;
             case "Nina":
-                esPersonaje.setStyle("-fx-background-image:url('assets/nina.jpg'); -fx-background-size: stretch;");break;
+                esPersonaje.setStyle("-fx-background-image:url('assets/nina.png'); -fx-background-size: stretch;");break;
+            case "Ricky":
+                esPersonaje.setStyle("-fx-background-image:url('assets/ricky.png'); -fx-background-size: stretch;");break;
             default:
-                esPersonaje.setStyle("-fx-background-image:url('assets/chucho.jpg'); -fx-background-size: stretch;");break;
+                esPersonaje.setStyle("-fx-background-image:url('assets/chucho.png'); -fx-background-size: stretch;");break;
         }
        esPersonaje.setPrefSize(90,90);
        pintar(); 
@@ -94,7 +96,6 @@ public abstract class MapaBase extends Scene implements Serializable{
         abajo.setStyle("fx-background-color:starry.jpg");
         abajo.getChildren().addAll(verInventario,stats);
         m2.setBottom(abajo);
-        m2.setStyle("-fx-background-image:url('assets/starry.jpg'); -fx-background-size: stretch;");
         super.setRoot(m2);
     }
     public void pintar(){
@@ -151,11 +152,13 @@ public abstract class MapaBase extends Scene implements Serializable{
                             }
                     switch (nom){
                         case "Chucho":
-                            casilla[i][j].setStyle("-fx-background-image:url('assets/chucho.jpg');-fx-background-size: stretch;");break;
+                            casilla[i][j].setStyle("-fx-background-image:url('assets/chucho.png');-fx-background-size: stretch;");break;
+                        case "Ricky":
+                            casilla[i][j].setStyle("-fx-background-image:url('assets/ricky.png');-fx-background-size: stretch;");break; 
                         case "Nina":
-                            casilla[i][j].setStyle("-fx-background-image:url('assets/nina.jpg');-fx-background-size: stretch;");break;
+                            casilla[i][j].setStyle("-fx-background-image:url('assets/nina.png');-fx-background-size: stretch;");break;
                         default:
-                            casilla[i][j].setStyle("-fx-background-image:url('assets/chucho.jpg');-fx-background-size: stretch;");break;
+                            casilla[i][j].setStyle("-fx-background-image:url('assets/chucho.png');-fx-background-size: stretch;");break;
                     }
                     casilla[i][j].setText(nom);
                     if((i==9)&&(j==9)){
@@ -197,11 +200,13 @@ public abstract class MapaBase extends Scene implements Serializable{
                     if(j<=-1){j=0;}
                     switch (nom){
             case "Chucho":
-                casilla[i][j].setStyle("-fx-background-image:url('assets/chucho.jpg'); -fx-background-size: stretch;");break;
+                casilla[i][j].setStyle("-fx-background-image:url('assets/chucho.png'); -fx-background-size: stretch;");break;
             case "Nina":
-                casilla[i][j].setStyle("-fx-background-image:url('assets/nina.jpg'); -fx-background-size: stretch;");break;
+                casilla[i][j].setStyle("-fx-background-image:url('assets/nina.png'); -fx-background-size: stretch;");break;
+             case "Ricky":
+                casilla[i][j].setStyle("-fx-background-image:url('assets/ricky.png'); -fx-background-size: stretch;");break;
             default:
-                casilla[i][j].setStyle("-fx-background-image:url('assets/chucho.jpg'); -fx-background-size: stretch;");break;
+                casilla[i][j].setStyle("-fx-background-image:url('assets/chucho.png'); -fx-background-size: stretch;");break;
         }
                 }
             }

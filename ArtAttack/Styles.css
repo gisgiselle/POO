@@ -1,0 +1,19 @@
+.titInicio{
+	-fx-font-family: 'Helvetica', Arial, sans-serif;
+	-fx-font-size: 150px;
+	 -fx-text-fill: black;
+}
+.hist{
+	-fx-text-fill:black;
+	-fx-font-size: 18px;
+}
+.iniciar{
+	-fx-background-color: #3ccbc3;
+	-fx-text-fill:white;
+	-fx-font-size: 30px;
+	}
+.continuar{
+	-fx-background-color: #cb3ccb;
+	-fx-text-fill:white;
+	-fx-font-size: 30px;
+}

@@ -19,7 +19,7 @@ public class EscogerPersonaje extends Scene{
         super(new HBox(),1000,1000);
         Button chucho= new Button("Chucho");
         chucho.setPrefSize(330,1000);
-        chucho.setStyle("-fx-background-image:url('assets/chucho.jpg');-fx-background-size: stretch;");
+        chucho.setStyle("-fx-background-image:url('assets/chucho.png');-fx-background-size: stretch;");
         chucho.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
             public void handle(MouseEvent e){   
               Heroe heroe= new Chucho();
@@ -29,7 +29,7 @@ public class EscogerPersonaje extends Scene{
         });
         Button nina= new Button("Nina");
         nina.setPrefSize(330,1000);
-        nina.setStyle("-fx-background-image:url('assets/nina.jpg');-fx-background-size: stretch;");
+        nina.setStyle("-fx-background-image:url('assets/nina.png');-fx-background-size: stretch;");
         nina.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
             public void handle(MouseEvent e){ 
                 Heroe heroe = new Nina(); 
@@ -37,8 +37,17 @@ public class EscogerPersonaje extends Scene{
                 main.setScene3(0,0,false,false,false,false,false);
             }
         });
-        
-        hb = new HBox(nina,chucho);
+         Button ricky= new Button("Ricky");
+        ricky.setPrefSize(330,1000);
+        ricky.setStyle("-fx-background-image:url('assets/ricky.png');-fx-background-size: stretch;");
+        ricky.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+            public void handle(MouseEvent e){ 
+                Heroe heroe = new Ricky(); 
+                main.setHeroe(heroe);             
+                main.setScene3(0,0,false,false,false,false,false);
+            }
+        });
+        hb = new HBox(nina,chucho,ricky);
         super.setRoot(hb);
     }
 }
