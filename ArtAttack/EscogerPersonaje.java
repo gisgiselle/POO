@@ -16,18 +16,22 @@ public class EscogerPersonaje extends Scene{
     private HBox hb;
 
     public EscogerPersonaje(Main main){
-        super(new HBox(),1000,1000);
+        super(new HBox(), 1000 , 1000);
+       
         Button chucho= new Button("Chucho");
         chucho.setPrefSize(330,1000);
         chucho.getStyleClass().add("chucho");
         chucho.setStyle("-fx-background-image:url('assets/chucho.png');-fx-background-size: stretch;");
+        
         chucho.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
+            
             public void handle(MouseEvent e){   
               Heroe heroe= new Chucho();
               main.setHeroe(heroe);                 
               main.setScene3(0,0,false,false,false,false,false);         
             }
         });
+
         Button nina= new Button("Nina");
         nina.getStyleClass().add("nina");
         nina.setPrefSize(330,1000);

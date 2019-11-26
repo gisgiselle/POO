@@ -16,11 +16,12 @@ public class Final extends Scene{
     public Final(Main main){
         super(new BorderPane(),1024,700);
         Label titulo= new Label("Yay");
-        Button continuar = new Button("CERRAR");
+        Button end = new Button("CERRAR");
+        end.getStyleClass().add("end");
         
-        VBox ultimo=new VBox();
-        ultimo.getChildren().addAll(titulo);
-        bp.setCenter(ultimo);
+        VBox nfk=new VBox();
+        nfk.getChildren().addAll(titulo);
+        bp.setCenter(nfk);
         super.setRoot(bp);
     }
 }

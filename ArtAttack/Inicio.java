@@ -27,17 +27,13 @@ public class Inicio extends Scene implements Serializable{
         Label titulo= new Label("Art Attack");
         bp.setStyle("-fx-background-image:url('assets/paint.png'); -fx-background-size: stretch;");
         titulo.getStyleClass().add("titInicio");
-        Label historia= new Label("Después de meses de esperar emocionado el viaje escolar al museo más hermoso,\n al fin ha llegado el día. Lo que no sabes, es que el maestro Podrick Prater \n "+
-            "(llamado por tus amigos  Mr. Mean Rat por su peculiares orejas y dientes masivos)\n tiene diferentes planes para ustedes." 
-            +" Al llegar al museo, descubren que está completamente vacío. \n Emocionados, corren a ver sus pinturas favoritas, dejando atrás a Mr. Mean Rat. "
-        +"\nDespiertas en un lugar extraño, todo es azul, con una textura peculiar,\n huele a algo distintivo ¿Es óleo? \n");
-        historia.getStyleClass().add("hist");
         Button iniciar= new Button("Nueva");
         Button continuar= new Button("Continuar");
         iniciar.setPrefSize(300,50);
         iniciar.getStyleClass().add("iniciar");
         continuar.setPrefSize(300,50);
         continuar.getStyleClass().add("continuar");
+        
         HBox hb= new HBox();
         hb.getChildren().addAll(continuar,iniciar);
         hb.setSpacing(500);
@@ -55,7 +51,7 @@ public class Inicio extends Scene implements Serializable{
 			}
 		);
         VBox his=new VBox();
-        his.getChildren().addAll(titulo,historia);
+        his.getChildren().addAll(titulo);
         bp.setCenter(his);
         his.setStyle("-fx-alignment: center; -fx-padding: 30px;");
         titulo.setStyle("-fx-alignment: top-center;");

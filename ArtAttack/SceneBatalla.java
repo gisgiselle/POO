@@ -24,7 +24,7 @@ import java.io.Serializable;
 public class SceneBatalla extends Scene implements Serializable{
     private Main main;
     private BorderPane bp=new BorderPane();
-    private Label l3= new Label("");
+    private Label pregunta= new Label("");
     private Label l4;
     private VBox vb= new VBox();
     private Heroe h;
@@ -48,12 +48,12 @@ public class SceneBatalla extends Scene implements Serializable{
         //titulof.setPrefSize(900,50);
         v=p.getHp();
         inicio();
-        Label l2=h.getImg();
-        Label l5=p.getImg();
-        Label l6= new Label("   VS   "); 
-        l6.getStyleClass().add("vs");
+        Label hl=h.getImg();
+        Label pl=p.getImg();
+        Label vs= new Label("   VS   "); 
+        vs.getStyleClass().add("vs");
 
-		vb.getChildren().addAll(l2,l6,l5);
+		vb.getChildren().addAll(hl,pl,vs);
         bp.setStyle("-fx-background-image:url('assets/box.jpg'); -fx-background-size: stretch;");
 
         bp.setCenter(hb);
@@ -64,9 +64,9 @@ public class SceneBatalla extends Scene implements Serializable{
     public void punch(String punch){
         switch(punch){
 			case "Ataque con Habilidad":
-				l3.setText("Con que habilidad quieres atacar? ");
+				pregunta.setText("Con que habilidad quieres atacar? ");
                 vb.getChildren().clear();
-                vb.getChildren().add(l3);
+                vb.getChildren().add(pregunta);
                 ComboBox habilidad= new ComboBox<>();
 				for(int i=0;i<h.getHabilidades().length;i++){
 					habilidad.getItems().add((i+1)+" "+h.getHabilidades()[i]+" ["+h.getHabilidades()[i].getHabilidadP()+"] ");
@@ -87,8 +87,8 @@ public class SceneBatalla extends Scene implements Serializable{
         });
 				break;
 			case "Usar objeto":
-				l3.setText("Que quieres hacer ");
-                vb.getChildren().add(l3);
+				pregunta.setText("Que quieres hacer ");
+                vb.getChildren().add(pregunta);
 				for(int i=0;i<h.getMochila().length;i++){
 					if(h.getMochila()[i]!=null){
 						l4= new Label((i+1)+" "+h.getMochila()[i].getNombreObjeto()+" ["+h.getMochila()[i].getObPunto()+"] ");
@@ -119,20 +119,20 @@ public class SceneBatalla extends Scene implements Serializable{
                         }
                     }   
                     });}catch(ArrayIndexOutOfBoundsException e){
-                                l3.setText("Pierdes tu turno");
+                                pregunta.setText("Pierdes tu turno");
                                 p.atacar(h);
                                 imprimirVida();
                             }  
 				break;	
 			default:
-				l3.setText("Pierdes tu turno");
+				pregunta.setText("Pierdes tu turno");
                 p.atacar(h);
                 imprimirVida();  
 		}    
     }
     public void inicio(){
-        Label l1= new Label("Elige tu ataque");
-        l1.getStyleClass().add("l1");
+        Label elataque= new Label("Elige tu ataque");
+        elataque.getStyleClass().add("l1");
         Button nor = new Button("Casual");
         nor.getStyleClass().add("butnor");
         nor.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
@@ -160,9 +160,9 @@ public class SceneBatalla extends Scene implements Serializable{
         atacar.getItems().add("Habilidad");
         atacar.getItems().add("Objeto");
         atacar.getStyleClass().add("combo");
-        vb.getChildren().addAll(l1,golpes,atacar);
+        vb.getChildren().addAll(elataque,golpes,atacar);
 		hb.getChildren().add(vb);
-        hb.getChildren().remove(l3);
+        hb.getChildren().remove(pregunta);
         bp.setCenter(hb);
         setOnKeyPressed(new EventHandler<KeyEvent>() {
             public void handle(KeyEvent ke) {
@@ -221,12 +221,14 @@ public class SceneBatalla extends Scene implements Serializable{
                     }   
                 }
             });
-            }else if(h.getHp()<=0){finalBatalla.setText("no ganaste");
-            vb.getChildren().add(finalBatalla);
-            bp.setCenter(vb);
-            h.setHp(100);
-			p.setHp(v);
-            main.fight(p,x,y);}
+            }else if(h.getHp()<=0){
+                finalBatalla.setText("no ganaste");
+                vb.getChildren().add(finalBatalla);
+                bp.setCenter(vb);
+                h.setHp(100);
+    			p.setHp(v);
+                main.fight(p,x,y);
+            }
 
     }   
 }

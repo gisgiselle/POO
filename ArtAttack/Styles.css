@@ -1,12 +1,9 @@
 .titInicio{
 	-fx-font-family: 'Helvetica', Arial, sans-serif;
-	-fx-font-size: 150px;
+	-fx-font-size: 180px;
 	 -fx-text-fill: black;
 }
-.hist{
-	-fx-text-fill:black;
-	-fx-font-size: 18px;
-}
+
 .iniciar{
     -fx-background-color: 
         #000000,

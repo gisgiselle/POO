@@ -24,8 +24,9 @@ import java.io.IOException;
 
 public class Main extends Application{
     private Scene intro = new Inicio(this);
-    private Scene personaje= new EscogerPersonaje(this);
     private Scene mapa1,mapa2,mapa3,mapa4,stats,ff,m;
+    private Scene personaje= new EscogerPersonaje(this);
+    private Scene mochichi = new Mochichi(this);
     private Stage mainStage;
     private Heroe heroe;
     private SceneBatalla sb;
@@ -67,6 +68,18 @@ public class Main extends Application{
             save(mapa1);
         }
     }
+        public void setStats(){
+        stats = new Stats(this);
+        mainStage.setScene(stats);
+        save(stats);
+        stats.getStylesheets().add("Styles.css");
+    } 
+        public void setMochichi(){
+        mainStage.setScene(mochichi);
+        save(mochichi);
+        mochichi.getStylesheets().add("Styles.css");
+    } 
+   
     
     public void setScene4(int xx, int yy,boolean encontroArma,boolean encontroDefensa,boolean entroPelea,boolean agarroVida,boolean agarroEnergia){
         Personaje malo= new Alma(); 
@@ -82,11 +95,7 @@ public class Main extends Application{
         save(mapa3);
         mainStage.setScene(mapa3);   
     }   
-        public void setStats(){
-        stats = new Stats(this);
-        mainStage.setScene(stats);
-        save(stats);
-    } 
+
    
     public void setSceneFinal(){
         ff = new Final(this);
@@ -99,8 +108,8 @@ public class Main extends Application{
     public Heroe getHeroe(){
         return heroe;
     }
-    public void fight(Personaje p, int xx1, int yy1){
-        sb= new SceneBatalla(heroe,p,xx1,yy1,this);
+    public void fight(Personaje p, int cfe, int mer){
+        sb= new SceneBatalla(heroe,p,cfe,mer,this);
         sb.getStylesheets().add("Styles.css");
         mainStage.setScene(sb);
     }
