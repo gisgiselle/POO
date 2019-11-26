@@ -7,6 +7,10 @@ import javafx.stage.Stage;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.input.*;
+import javafx.scene.layout.VBox;
+import javafx.scene.*;
+import javafx.geometry.Pos;
+import javafx.scene.input.*;
 import javafx.event.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.BorderPane;
@@ -26,6 +30,7 @@ public class Main extends Application{
     private Heroe heroe;
     private SceneBatalla sb;
     private BorderPane ultimo;
+
 
     public static void main(String[]args){
         launch(args);
@@ -48,7 +53,8 @@ public class Main extends Application{
         } 
     }
     public void setScene2(){
-        mainStage.setScene(personaje);    
+        mainStage.setScene(personaje);  
+        personaje.getStylesheets().add("Styles.css");  
     }
     public void setScene3(int x, int y,boolean encontroArma,boolean encontroDefensa,boolean entroPelea,boolean agarroVida,boolean agarroEnergia){
         if(x==9&&y==9){setScene4(0,0,encontroArma,encontroDefensa,entroPelea,agarroVida,agarroEnergia);   
@@ -89,6 +95,7 @@ public class Main extends Application{
     }
     public void fight(Personaje p, int xx1, int yy1){
         sb= new SceneBatalla(heroe,p,xx1,yy1,this);
+        sb.getStylesheets().add("Styles.css");
         mainStage.setScene(sb);
     }
    

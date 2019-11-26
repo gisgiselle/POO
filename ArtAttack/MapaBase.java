@@ -93,9 +93,9 @@ public abstract class MapaBase extends Scene implements Serializable{
         });
         m2.setCenter(m1);
         abajo= new HBox();
-        abajo.setStyle("fx-background-color:starry.jpg");
         abajo.getChildren().addAll(verInventario,stats);
         m2.setBottom(abajo);
+        m2.setStyle("-fx-background-image:url('assets/starry.png');");
         super.setRoot(m2);
     }
     public void pintar(){

@@ -19,6 +19,7 @@ public class EscogerPersonaje extends Scene{
         super(new HBox(),1000,1000);
         Button chucho= new Button("Chucho");
         chucho.setPrefSize(330,1000);
+        chucho.getStyleClass().add("chucho");
         chucho.setStyle("-fx-background-image:url('assets/chucho.png');-fx-background-size: stretch;");
         chucho.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
             public void handle(MouseEvent e){   
@@ -28,6 +29,7 @@ public class EscogerPersonaje extends Scene{
             }
         });
         Button nina= new Button("Nina");
+        nina.getStyleClass().add("nina");
         nina.setPrefSize(330,1000);
         nina.setStyle("-fx-background-image:url('assets/nina.png');-fx-background-size: stretch;");
         nina.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
@@ -39,6 +41,7 @@ public class EscogerPersonaje extends Scene{
         });
          Button ricky= new Button("Ricky");
         ricky.setPrefSize(330,1000);
+        ricky.getStyleClass().add("ricky");
         ricky.setStyle("-fx-background-image:url('assets/ricky.png');-fx-background-size: stretch;");
         ricky.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
             public void handle(MouseEvent e){ 

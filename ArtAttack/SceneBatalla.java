@@ -30,7 +30,7 @@ public class SceneBatalla extends Scene implements Serializable{
     private Heroe h;
     private Personaje p;
     private HBox hb= new HBox();
-    private Label finalBatalla= new Label("WOOOO");
+    private Label finalBatalla= new Label("WOOOO \n GANASTE");
     private TextField tf;
     private int op,x,y,v;
     private ComboBox atacar;
@@ -42,18 +42,22 @@ public class SceneBatalla extends Scene implements Serializable{
         this.x=x;
         this.y=y;
         VBox vb = new VBox();
-        Label titulo= new Label("1...2...3... FIGHT");
-        titulo.setStyle("-fx-background-color:red;");
-        titulo.setPrefSize(900,50);
+        Label titulof= new Label("1  ...  2  ...  3  ...              FIGHT");
+        titulof.getStyleClass().add("battle");
+        //titulof.setPrefSize(900,50);
         v=p.getHp();
         inicio();
         Label l2=h.getImg();
         Label l5=p.getImg();
-        Label l6= new Label("VS");     
+        Label l6= new Label("   VS   "); 
+        l6.getStyleClass().add("vs");
+
 		vb.getChildren().addAll(l2,l6,l5);
+        bp.setStyle("-fx-background-image:url('assets/box.jpg'); -fx-background-size: stretch;");
+
         bp.setCenter(hb);
         bp.setLeft(vb);
-        bp.setTop(titulo);
+        bp.setTop(titulof);
         super.setRoot(bp);
     }
     public void punch(String punch){
@@ -126,8 +130,10 @@ public class SceneBatalla extends Scene implements Serializable{
 		}    
     }
     public void inicio(){
-        Label l1= new Label("Como quieres atacar?");
-        Button nor = new Button("Normal");
+        Label l1= new Label("Elige tu ataque");
+        l1.getStyleClass().add("l1");
+        Button nor = new Button("Casual");
+        nor.getStyleClass().add("butnor");
         nor.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
             public void handle(MouseEvent e){ 
                 h.atacar(p,1); 
@@ -137,6 +143,7 @@ public class SceneBatalla extends Scene implements Serializable{
             }
         });
         Button fue = new Button("Fuerte");
+        fue.getStyleClass().add("fuer");
         fue.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
             public void handle(MouseEvent e){ 
                 h.atacar(p,2); 
@@ -147,9 +154,11 @@ public class SceneBatalla extends Scene implements Serializable{
         });
         HBox golpes=new HBox();
         golpes.getChildren().addAll(nor,fue);
+        golpes.setSpacing(40);
         atacar= new ComboBox<>();
         atacar.getItems().add("Habilidad");
         atacar.getItems().add("Objeto");
+        atacar.getStyleClass().add("combo");
         vb.getChildren().addAll(l1,golpes,atacar);
 		hb.getChildren().add(vb);
         hb.getChildren().remove(l3);
@@ -166,13 +175,17 @@ public class SceneBatalla extends Scene implements Serializable{
     }
     public void imprimirVida(){
         Label vida = new Label(h.toString());
+        vida.getStyleClass().add("hp");
         Label vidae = new Label(p.toString());
+        vidae.getStyleClass().add("hpEne");
         vb.getChildren().addAll(vida, vidae);
         bp.setCenter(vb);
         
         if(p.getHp()>0&&h.getHp()>0){
             inicio();}else if(p.getHp()<=0){
             vb.getChildren().add(finalBatalla);
+            vb.setSpacing(40);
+            finalBatalla.getStyleClass().add("finB");
             bp.setCenter(vb);
             setOnKeyPressed(new EventHandler<KeyEvent>() {
             public void handle(KeyEvent ke) {
@@ -200,5 +213,6 @@ public class SceneBatalla extends Scene implements Serializable{
             h.setHp(100);
 			p.setHp(v);
             main.fight(p,x,y);}
+
     }   
 }

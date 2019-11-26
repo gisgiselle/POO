@@ -11,7 +11,7 @@ public class Chucho extends Heroe{
         
         super.setHabilidad(habilidad);
         img.setPrefSize(500,300);
-        img.setStyle("-fx-background-image:url('assets/chucho.jpg'); -fx-background-size: stretch;");
+        img.setStyle("-fx-background-image:url('assets/chucho.png'); -fx-background-size: stretch;");
         super.setImg(img);
     }
     

@@ -11,7 +11,7 @@ public class Nina extends Heroe{
         
         super.setHabilidad(habilidad);
         img.setPrefSize(500,300);
-        img.setStyle("-fx-background-image:url('assets/nina.jpg'); -fx-background-size: stretch;");
+        img.setStyle("-fx-background-image:url('assets/nina.png'); -fx-background-size: stretch;");
         super.setImg(img);
     }
     

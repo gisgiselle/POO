@@ -8,12 +8,91 @@
 	-fx-font-size: 18px;
 }
 .iniciar{
-	-fx-background-color: #3ccbc3;
-	-fx-text-fill:white;
-	-fx-font-size: 30px;
+    -fx-background-color: 
+        #000000,
+        linear-gradient(#7ebcea, #2f4b8f),
+        linear-gradient(#426ab7, #263e75),
+        linear-gradient(#395cab, #223768);
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-padding: 12 30 12 30;
+    -fx-text-fill: white;
+    -fx-font-size: 30px;
 	}
 .continuar{
-	-fx-background-color: #cb3ccb;
-	-fx-text-fill:white;
+    -fx-background-color: 
+        #000000,
+        linear-gradient(#7ebcea, #2f4b8f),
+        linear-gradient(#426ab7, #263e75),
+        linear-gradient(#395cab, #223768);
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-padding: 12 30 12 30;
+    -fx-text-fill: white;
+    -fx-font-size: 30px;
+}
+.nina{
+	    -fx-font-size: 60px;
+	    -fx-font-family: 'Helvetica', Arial, sans-serif;
+	    -fx-text-fill: black;
+	        -fx-background-color:#e5f5a7;
+}
+.ricky{
+	    -fx-font-size: 60px;
+	    -fx-font-family: 'Helvetica', Arial, sans-serif;
+	    -fx-text-fill: black;
+	        -fx-background-color:#f5a7ce;
+}
+.chucho{
+	    -fx-font-size: 60px;
+	    -fx-font-family: 'Helvetica', Arial, sans-serif;
+	    -fx-text-fill: black;
+	        -fx-background-color:#a7c8f5;
+}
+.battle{
+	-fx-font-size: 60px;
+	-fx-font-family: 'Helvetica', Arial, sans-serif;
+	-fx-text-fill: white;
+}
+.vs{
+	-fx-font-size: 150px;
+	-fx-font-family: 'Helvetica', Arial, sans-serif;
+	-fx-text-fill: white;
+}
+.l1{
+	-fx-font-size: 40px;
+	-fx-font-family: 'Helvetica', Arial, sans-serif;
+	-fx-text-fill: white;
+}
+.butnor{
+	 -fx-background-color:#5ede11;
+	 -fx-font-size: 40px;
+	 -fx-text-fill: white;
+}
+
+.fuer{
+	 -fx-background-color:#de1111;
+	 -fx-font-size: 40px;
+	 -fx-text-fill: white;
+}
+.hp{
+	-fx-font-size: 20px;
+	-fx-font-family: 'Helvetica', Arial, sans-serif;
+	-fx-text-fill: #f0ff00;
+}
+.hpEne{
+	-fx-font-size: 20px;
+	-fx-font-family: 'Helvetica', Arial, sans-serif;
+	-fx-text-fill: #ff0087;
+}
+.combo{
 	-fx-font-size: 30px;
+	-fx-font-family: 'Helvetica', Arial, sans-serif;
+	-fx-background-color:white;
+	-fx-pref-width: 1000;
+}
+.finB{
+	-fx-font-size: 100px;
+	-fx-font-family: 'Helvetica', Arial, sans-serif;
+	-fx-text-fill: white;
 }
