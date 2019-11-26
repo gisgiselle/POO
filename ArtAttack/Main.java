@@ -62,7 +62,8 @@ public class Main extends Application{
             Personaje malo= new Estrella(); 
             Boss boss= new VanGogh();
             mapa1 = new Mapa1(heroe, this,x,y,malo,boss,0,7,3,encontroArma,encontroDefensa,entroPelea,agarroVida,agarroEnergia);
-            mainStage.setScene(mapa1);                     
+            mainStage.setScene(mapa1);
+            mapa1.getStylesheets().add("Styles.css");                     
             save(mapa1);
         }
     }

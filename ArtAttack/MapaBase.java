@@ -66,18 +66,19 @@ public abstract class MapaBase extends Scene implements Serializable{
        primeraVez2=j;
         switch (nom){
             case "Chucho":
-                esPersonaje.setStyle("-fx-background-image:url('assets/chucho.png'); -fx-background-size: stretch;");break;
+                esPersonaje.setStyle("-fx-background-image:url('assets/chucho.png'); -fx-background-color: transparent; -fx-background-size: stretch;");break;
             case "Nina":
-                esPersonaje.setStyle("-fx-background-image:url('assets/nina.png'); -fx-background-size: stretch;");break;
+                esPersonaje.setStyle("-fx-background-image:url('assets/nina.png');  -fx-background-color: transparent;-fx-background-size: stretch;");break;
             case "Ricky":
-                esPersonaje.setStyle("-fx-background-image:url('assets/ricky.png'); -fx-background-size: stretch;");break;
+                esPersonaje.setStyle("-fx-background-image:url('assets/ricky.png'); -fx-background-color: transparent; -fx-background-size: stretch;");break;
             default:
-                esPersonaje.setStyle("-fx-background-image:url('assets/chucho.png'); -fx-background-size: stretch;");break;
+                esPersonaje.setStyle("-fx-background-image:url('assets/chucho.png'); -fx-background-color: transparent; -fx-background-size: stretch;");break;
         }
        esPersonaje.setPrefSize(90,90);
        pintar(); 
        Button verInventario= new Button("Mochila");
        verInventario.setPrefSize(150,50);
+       verInventario.getStyleClass().add("mochila");
        verInventario.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
             public void handle(MouseEvent e){               
                 inventario=heroe.imprimeInventario();
@@ -86,6 +87,7 @@ public abstract class MapaBase extends Scene implements Serializable{
         });
        Button stats= new Button("Stats");
        stats.setPrefSize(150,50);
+       stats.getStyleClass().add("stats");
        stats.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>(){
             public void handle(MouseEvent e){               
                 m2.setBottom(abajo);
@@ -94,6 +96,7 @@ public abstract class MapaBase extends Scene implements Serializable{
         m2.setCenter(m1);
         abajo= new HBox();
         abajo.getChildren().addAll(verInventario,stats);
+        abajo.setSpacing(40);
         m2.setBottom(abajo);
         m2.setStyle("-fx-background-image:url('assets/starry.png');");
         super.setRoot(m2);
@@ -108,19 +111,19 @@ public abstract class MapaBase extends Scene implements Serializable{
                 if(a==i&&b==j){
                         casilla[a][b]=esPersonaje;
                 }else if(((a==a1)&&(b==a2))&&(encontroArma==false)){    
-                        c.setStyle("-fx-background-image:url('assets/pincel.jpg'); -fx-background-size: stretch;");
+                        c.setStyle("-fx-background-image:url('assets/pincel.png');  -fx-background-color: transparent; -fx-background-size: stretch;");
                         casilla[a][b]=c;
                 }else if(((a==d1)&&(b==d2))&&(encontroDefensa==false)){    
-                        c.setStyle("-fx-background-image:url('assets/cuaderno.jpg'); -fx-background-size: stretch;");
+                        c.setStyle("-fx-background-image:url('assets/cuaderno.png');  -fx-background-color: transparent; -fx-background-size: stretch;");
                         casilla[a][b]=c;
                 }else if(((a==b1)&&(b==b2))&&(entroPelea==false)){    
-                        c.setStyle("-fx-background-image:url('assets/sur.jpg'); -fx-background-size: stretch;");
+                        c.setStyle("-fx-background-image:url('assets/sur.png'); -fx-background-color: transparent; -fx-background-size: stretch;");
                         casilla[a][b]=c;
                 }else if(((a==sHp)&&(b==sHp))&&(agarroVida==false)){             
                         c.setStyle("-fx-background-image:url('assets/heart.png'); -fx-background-color: transparent; -fx-background-size: stretch;");
                         casilla[a][b]=c;
                 }else if(((a==sSp)&&(b==sSp))&&(agarroEnergia==false)){             
-                        c.setStyle("-fx-background-image:url('assets/energyDrink.jpg');-fx-background-color: transparent; -fx-background-size: stretch;");
+                        c.setStyle("-fx-background-image:url('assets/energy.png');-fx-background-color: transparent; -fx-background-size: stretch;");
                         casilla[a][b]=c;
                 }else{
                     c.setStyle("-fx-background-color: transparent;");
@@ -152,13 +155,13 @@ public abstract class MapaBase extends Scene implements Serializable{
                             }
                     switch (nom){
                         case "Chucho":
-                            casilla[i][j].setStyle("-fx-background-image:url('assets/chucho.png');-fx-background-size: stretch;");break;
+                            casilla[i][j].setStyle("-fx-background-image:url('assets/chucho.png'); -fx-background-color: transparent;-fx-background-size: stretch;");break;
                         case "Ricky":
-                            casilla[i][j].setStyle("-fx-background-image:url('assets/ricky.png');-fx-background-size: stretch;");break; 
+                            casilla[i][j].setStyle("-fx-background-image:url('assets/ricky.png'); -fx-background-color: transparent;-fx-background-size: stretch;");break; 
                         case "Nina":
-                            casilla[i][j].setStyle("-fx-background-image:url('assets/nina.png');-fx-background-size: stretch;");break;
+                            casilla[i][j].setStyle("-fx-background-image:url('assets/nina.png'); -fx-background-color: transparent;-fx-background-size: stretch;");break;
                         default:
-                            casilla[i][j].setStyle("-fx-background-image:url('assets/chucho.png');-fx-background-size: stretch;");break;
+                            casilla[i][j].setStyle("-fx-background-image:url('assets/chucho.png'); -fx-background-color: transparent;-fx-background-size: stretch;");break;
                     }
                     casilla[i][j].setText(nom);
                     if((i==9)&&(j==9)){
